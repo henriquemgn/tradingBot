@@ -187,13 +187,9 @@ while True:
 			print("Is Past RSI > 50: ", RSI[len(RSI)-3]>50)
 			print("\\\\\\")
 			
-			if RSI[len(RSI)-3] > 50 and closePrices[0]<closePrices[26]:# and BBIndex == True:
-				if finalDecision < (-0.15) and (datetime.now().minute == 59)and SMA100 > closePrices[0]:
-					Strategy = 1
-					
-			elif RSI[len(RSI)-3] > 50 and closePrices[0]<closePrices[26]:# and BBIndex == True:
-				if finalDecision < (-0.15) and (datetime.now().minute == 59)and SMA100 > closePrices[0]:
-					Strategy = 1
+		###
+		#algo was here
+		###
 
 			time.sleep(1)
 			
@@ -211,18 +207,12 @@ while True:
 		# STRATEGY = 1	   COMMAND TO SELL IF NOT SOLD - - COMMAND TO CHECK STOP LOSS IF ALREADY SOLD
 		###########################################
 			if Strategy == 1 or CheckPosition == 1:
-				if (counterSL == 0 or (timeStop != (datetime.now().hour))) and CheckPosition==1:
-					previousStop = Variance.VarianceStop(closePrices, previousStop[0], counterSL)
-					counterSL+=1
-					timeStop = datetime.now().hour
-					if counterSL > 10 and Strategy < (-0.5):
-						previousStop = previousStop + (previousStop*0.005)
 
-				print("////////////////\n","CounterSL: ",counterSL-1,"\nStop Loss: ",HMA36,"\n////////////////")
+					#also part of the strategy
 
 				VarianceTest +=1
 
-				if (BalanceBTC != 0 and BalanceUSD <10)  and CheckPosition == 0 :#and openPrices[1]-closePrices[1] >= 0: 
+				if (BalanceBTC != 0 and BalanceUSD <10)  and CheckPosition == 0 :
 					CheckPosition = 1
 
 					if VolumeAvg < BalanceBTC:
@@ -242,7 +232,7 @@ while True:
 					BalanceUSD = math.floor(BalanceBTC*(closePrices[0]))
 					BalanceBTC = 0.0000000001
 
-				elif SoldAt != 0 and CheckPosition == 1 and (closePrices[0] > HMA36 and finalDecision > (0.1) and real[1]<closePrices[0]) or closePrices[0] > (SoldAt*1.03):
+				elif SoldAt != 0 and CheckPosition == 1: #another part of strategy was here
 
 					counterSL=0
 
