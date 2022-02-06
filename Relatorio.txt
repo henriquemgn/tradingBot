@@ -1,0 +1,20 @@
+
+Selling at: 14860
+Bought Back at: 15080
+BalanceBTC: 0.024999
+
+Selling at: 16025
+Selling at: 16013
+Bought Back at: 16178
+BalanceBTC: 0.024663
+
+Selling at: 15949
+Selling at: 15921
+Bought Back at: 16016
+BalanceBTC: 0.024411
+
+Bought Back at: 15909
+BalanceBTC: 0.024576
+
+Bought Back at: 16373
+BalanceBTC: 0.023879
