@@ -10,8 +10,8 @@ import time
 #authString = 'AUTH'
 def ConnectAuth(ws_auth):
 
-	API_KEY = "ogrWziTnMpL8YmPx7ax6TZAOwcf5pPtVjxcbAhIu5ou"
-	API_SECRET = "yTFBeXjF0zYLRaRnIFRSY3Znu54YqNKasOZj174wjhj"
+	API_KEY = ""
+	API_SECRET = ""
 
 	nonce = str(int(time.time() * 10000))
 	auth_string = 'AUTH' + nonce
